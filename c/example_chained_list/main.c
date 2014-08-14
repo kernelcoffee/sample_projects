@@ -15,8 +15,8 @@ clist* getNext(int n)
 {
   clist* set = (clist*)malloc(sizeof(clist));
   set->value = n;
-  set->column = '\0';
-  set->next = '\0';
+  set->column = NULL;
+  set->next = NULL;
 
   return set;
 }
@@ -47,10 +47,10 @@ int main(int argc, char *argv[])
   printf("showing\n");
   /* Reading phase */
   list = first;
-  while (list != '\0')
+  while (list != NULL)
     {
       clist* temp = list->column;
-      while (temp != '\0')
+      while (temp != NULL)
   	{
   	  printf(" %d", temp->value);
   	  temp = temp->next;
